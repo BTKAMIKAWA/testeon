@@ -1,0 +1,44 @@
+@using eonreality.Models
+@model User
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<form asp-action="Submit" asp-controller="Home" method="post">
+    <span asp-validation-for="NameField" style="color:red"></span><br>
+    <label asp-for="NameField">Name</label> 
+    <input asp-for="NameField" class="name-input"><br>
+   
+    <span asp-validation-for="EmailField" style="color:red"></span><br>
+    <label asp-for="EmailField">Email</label>
+    <input class="email-input" asp-for="EmailField"><br>
+    
+    <span asp-validation-for="Gender" style="color:red"></span><br>
+    <label class="gender" asp-for="Gender">Gender</label>
+        <input asp-for="Gender" type="radio" value="male" checked>
+        <label class="sex" asp-for="Gender">Male</label>
+        <input asp-for="Gender" type="radio" value="female">
+        <label class="sex" aps-for="Gender">Female</label><br>
+    
+    <span asp-validation-for="DateRegistered" style="color: red"></span><br>
+    <label asp-for="DateRegistered">Date Registered</label>
+    <input asp-for="DateRegistered" class="date-input" type="text"><br>
+    
+    <!--<span asp-validation-for="DaysR" style="color: red"></span>
+    <label asp-for="DaysR">Selected Days</label>
+        <input id="dayone" type="checkbox" asp-for="DaysR" value="Day1" checked>
+        <label class="days" asp-for="DaysR">Day 1</label>
+        <input id="daytwo" type="checkbox" asp-for="DaysR" value="Day2">
+        <label class="days" asp-for="DaysR">Day 2</label>
+        <input id="daythree" type="checkbox" asp-for="DaysR" value="Day3">
+        <label class="days" asp-for="DaysR">Day 3</label>
+    -->
+    <span asp-validation-for="AdditionalR" style="color: red"></span><br>
+    <label asp-for="AdditionalR">Additional Request</label>
+    <textarea class="additional" asp-for="AdditionalR"></textarea><br>
+    
+    <input value="Submit" class="submit" type="submit">
+
+</form>
